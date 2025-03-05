@@ -1,12 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
-
+using VRExplorer;
 /// <summary>
 /// An interactable that can be pressed by a direct interactor
 /// </summary>
-public class XRButton : XRBaseInteractable
+public class XRButton : XRBaseInteractable, ITriggerableEntity
 {
+    [ExcludeFromCodeCoverage] public float TriggeringTime => 2.5f;
+    [ExcludeFromCodeCoverage] public string Name => Str.Triggerable;
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerring()
+    {
+        OnPress?.Invoke();
+    }
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerred()
+    {
+        OnRelease?.Invoke();
+    }
+
     [Tooltip("The transform of the visual component of the button")]
     public Transform buttonTransform = null;
 
@@ -27,6 +43,8 @@ public class XRButton : XRBaseInteractable
     private float hoverHeight = 0.0f;
     private float startHeight = 0.0f;
     private bool previousPress = false;
+
+
 
     protected override void OnEnable()
     {
@@ -72,7 +90,7 @@ public class XRButton : XRBaseInteractable
     {
         if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
         {
-            if (isHovered)
+            if(isHovered)
             {
                 float height = FindButtonHeight();
                 ApplyHeight(height);
@@ -135,4 +153,6 @@ public class XRButton : XRBaseInteractable
     {
         return false;
     }
+
+
 }

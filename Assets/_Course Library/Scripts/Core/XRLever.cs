@@ -1,12 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using VRExplorer;
 
 /// <summary>
 /// An interactable lever that snaps into an on or off position by a direct interactor
 /// </summary>
-public class XRLever : XRBaseInteractable
+public class XRLever : XRBaseInteractable, ITriggerableEntity
 {
+    [ExcludeFromCodeCoverage] public float TriggeringTime => 2.5f;
+    [ExcludeFromCodeCoverage] public string Name => Str.Button;
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerring()
+    {
+        OnLeverActivate?.Invoke();
+    }
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerred()
+    {
+        OnLeverDeactivate?.Invoke();
+    }
     [Tooltip("The object that's grabbed and manipulated")]
     public Transform handle = null;
 

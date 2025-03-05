@@ -1,13 +1,37 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using VRExplorer;
 
 /// <summary>
 /// An interactable joystick that can move side to side, and forward and back by a direct interactor
 /// </summary>
-public class XRJoystick : XRBaseInteractable
+public class XRJoystick : XRBaseInteractable, ITransformableEntity
 {
+    [ExcludeFromCodeCoverage] public float TriggeringTime => 2.5f;
+    [ExcludeFromCodeCoverage] public string Name => Str.Transformable;
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerring()
+    {
+        OnSelectEntered(new SelectEnterEventArgs());
+    }
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerred()
+    {
+        OnSelectExited(new SelectExitEventArgs());
+        selectExited?.Invoke(new SelectExitEventArgs());
+    }
+
+    [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => throw new NotImplementedException();
+
+    [ExcludeFromCodeCoverage] public Vector3 DeltaRotation => throw new NotImplementedException();
+
+    [ExcludeFromCodeCoverage] public Vector3 DeltaScale => throw new NotImplementedException();
+
     public enum JoystickType
     {
         None,
@@ -34,6 +58,9 @@ public class XRJoystick : XRBaseInteractable
     public ValueChangeEvent OnYValueChange = new ValueChangeEvent();
 
     public Vector2 Value { get; private set; } = Vector2.zero;
+
+
+
     private IXRSelectInteractor selectInteractor = null;
 
     private Vector3 initialPosition = Vector3.zero;

@@ -205,6 +205,16 @@
       "source": "local-tarball",
       "dependencies": {}
     },
+    "com.tsingpig.vrexplorer": {
+      "version": "file:D:/--UnityProject/VR/VRExplorer/Assets/VRExplorer",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.test-framework": "1.0.16",
+        "com.unity.settings-manager": "1.0.1",
+        "com.unity.xr.interaction.toolkit": "2.0.4"
+      }
+    },
     "com.unity.burst": {
       "version": "1.7.3",
       "depth": 1,
@@ -215,7 +225,7 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.collab-proxy": {
-      "version": "1.15.18",
+      "version": "1.17.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -336,6 +346,13 @@
       },
       "url": "https://packages.unity.cn"
     },
+    "com.unity.settings-manager": {
+      "version": "1.0.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
     "com.unity.shadergraph": {
       "version": "12.1.7",
       "depth": 1,
@@ -387,13 +404,13 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.transport": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.collections": "1.2.3",
-        "com.unity.burst": "1.6.4",
-        "com.unity.mathematics": "1.2.5"
+        "com.unity.collections": "1.2.4",
+        "com.unity.burst": "1.6.6",
+        "com.unity.mathematics": "1.2.6"
       },
       "url": "https://packages.unity.cn"
     },
@@ -487,7 +504,7 @@
     },
     "com.unity.xr.openxr": {
       "version": "1.5.3",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.xr.management": "4.0.1",

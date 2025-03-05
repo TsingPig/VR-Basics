@@ -1,13 +1,31 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using VRExplorer;
 
 /// <summary>
 /// An interactable knob that follows the rotation of the interactor
 /// </summary>
-public class XRKnob : XRBaseInteractable
+public class XRKnob : XRBaseInteractable, ITriggerableEntity
 {
+
+
+    [ExcludeFromCodeCoverage] public float TriggeringTime => 2.5f;
+    [ExcludeFromCodeCoverage] public string Name => Str.Button;
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerring()
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    public void Triggerred()
+    {
+    }
+
+
     [Tooltip("The transform of the visual component of the knob")]
     public Transform knobTransform = null;
 

@@ -13,7 +13,7 @@ public class XRKnob : XRBaseInteractable, ITriggerableEntity
 
 
     [ExcludeFromCodeCoverage] public float TriggeringTime => 2.5f;
-    [ExcludeFromCodeCoverage] public string Name => Str.Button;
+    [ExcludeFromCodeCoverage] public string Name => Str.Triggerable;
 
     [ExcludeFromCodeCoverage]
     public void Triggerring()

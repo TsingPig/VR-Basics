@@ -10,27 +10,24 @@ using VRExplorer;
 /// </summary>
 public class XRJoystick : XRBaseInteractable, ITransformableEntity
 {
-    [ExcludeFromCodeCoverage] public float TriggeringTime => 2.5f;
+    [ExcludeFromCodeCoverage] public float TriggeringTime => 4.5f;
     [ExcludeFromCodeCoverage] public string Name => Str.Transformable;
 
     [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
-        OnSelectEntered(new SelectEnterEventArgs());
     }
 
     [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
-        OnSelectExited(new SelectExitEventArgs());
-        selectExited?.Invoke(new SelectExitEventArgs());
     }
 
-    [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => throw new NotImplementedException();
+    [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => new Vector3(0, 0, 0);
 
-    [ExcludeFromCodeCoverage] public Vector3 DeltaRotation => throw new NotImplementedException();
+    [ExcludeFromCodeCoverage] public Vector3 DeltaRotation => new Vector3(90, 0, 0);
 
-    [ExcludeFromCodeCoverage] public Vector3 DeltaScale => throw new NotImplementedException();
+    [ExcludeFromCodeCoverage] public Vector3 DeltaScale => new Vector3(0, 0, 0);
 
     public enum JoystickType
     {

@@ -15,17 +15,40 @@ public class XRLever : XRBaseInteractable, ITriggerableEntity
     [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
-        StartGrab(new SelectEnterEventArgs() { interactorObject = new XRDirectInteractor() });
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
+
+        StartGrab(new SelectEnterEventArgs() { interactorObject = interactor });
         OnLeverActivate?.Invoke();
     }
 
     [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
-        EndGrab(new SelectExitEventArgs() { interactorObject = new XRDirectInteractor() });
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
+
         Vector3 lookDirection = GetLookDirection();
         handle.forward = transform.TransformDirection(lookDirection);
         OnLeverDeactivate?.Invoke();
+        EndGrab(new SelectExitEventArgs() { interactorObject = interactor });
+
     }
     [Tooltip("The object that's grabbed and manipulated")]
     public Transform handle = null;

@@ -13,7 +13,6 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
     [ExcludeFromCodeCoverage] public float TriggeringTime => 4.5f;
     [ExcludeFromCodeCoverage] public string Name => Str.Transformable;
 
-    [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
         var obj = EntityManager.Instance.vrexplorerMono.gameObject;
@@ -26,12 +25,9 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
         {
             obj.AddComponent<ActionBasedController>();
         }
-
-
         StartGrab(new SelectEnterEventArgs() { interactorObject = interactor });
     }
 
-    [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
         var obj = EntityManager.Instance.vrexplorerMono.gameObject;
@@ -45,13 +41,14 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
             obj.AddComponent<ActionBasedController>();
         }
 
-        EndGrab(new SelectExitEventArgs() { interactorObject = interactor });
         OnXValueChange.Invoke(DeltaRotation.x);
         OnYValueChange.Invoke(DeltaRotation.y);
         Vector3 targetPosition = selectInteractor.transform.position;
         Vector3 newRotation = FindJoystickRotation(targetPosition);
         ApplyRotation(newRotation);
         SetValue(newRotation);
+        EndGrab(new SelectExitEventArgs() { interactorObject = interactor });
+
     }
 
     [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => new Vector3(0, 0, 0);
@@ -133,9 +130,9 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
     {
         base.ProcessInteractable(updatePhase);
 
-        if (isSelected)
+        if(isSelected)
         {
-            if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
+            if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
                 Vector3 targetPosition = selectInteractor.transform.position;
                 Vector3 newRotation = FindJoystickRotation(targetPosition);
@@ -154,13 +151,13 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
 
         Vector3 finalRotation = Vector3.zero;
 
-        if (leverType == JoystickType.FrontBack || leverType == JoystickType.Both)
+        if(leverType == JoystickType.FrontBack || leverType == JoystickType.Both)
         {
             float xRotation = GetRotationDifference(positionDifference.y, positionDifference.z);
             finalRotation.x = xRotation;
         }
 
-        if (leverType == JoystickType.LeftRight || leverType == JoystickType.Both)
+        if(leverType == JoystickType.LeftRight || leverType == JoystickType.Both)
         {
             float zRotation = GetRotationDifference(positionDifference.y, positionDifference.x);
             finalRotation.z = zRotation;

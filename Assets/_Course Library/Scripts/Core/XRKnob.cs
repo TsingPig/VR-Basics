@@ -18,19 +18,42 @@ public class XRKnob : XRBaseInteractable, ITransformableEntity
     [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
-        //StartTurn(new SelectEnterEventArgs() { interactorObject = new XRDirectInteractor() });
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
+
+        StartTurn(new SelectEnterEventArgs() { interactorObject = interactor });
     }
 
     [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
-        //EndTurn(new SelectExitEventArgs() { interactorObject = new XRDirectInteractor() });
-        //OnValueChange.Invoke(DeltaRotation.y);
-        //Angle = FindRotationValue();
-        //float finalRotation = ApplyRotation(Angle);
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
 
-        //SetValue(finalRotation);
-        //selectRotation = selectInteractor.transform.rotation;
+        OnValueChange.Invoke(DeltaRotation.y);
+        Angle = FindRotationValue();
+        float finalRotation = ApplyRotation(Angle);
+
+        SetValue(finalRotation);
+        selectRotation = selectInteractor.transform.rotation;
+        EndTurn(new SelectExitEventArgs() { interactorObject = interactor });
+
     }
 
     [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => new Vector3(0, 0, 0);

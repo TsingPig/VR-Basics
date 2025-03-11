@@ -30,6 +30,7 @@ public class XRButton : XRBaseInteractable, ITriggerableEntity
         float height = FindButtonHeight();
         ApplyHeight(height);
         OnPress?.Invoke();
+
     }
 
     [ExcludeFromCodeCoverage]

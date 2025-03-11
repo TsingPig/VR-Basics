@@ -29,7 +29,9 @@ public class XRKnob : XRBaseInteractable, ITransformableEntity
             obj.AddComponent<ActionBasedController>();
         }
 
-        StartTurn(new SelectEnterEventArgs() { interactorObject = interactor });
+        var e = new SelectEnterEventArgs() { interactorObject = interactor };
+        StartTurn(e);
+        selectEntered.Invoke(e);
     }
 
     [ExcludeFromCodeCoverage]
@@ -52,8 +54,9 @@ public class XRKnob : XRBaseInteractable, ITransformableEntity
 
         SetValue(finalRotation);
         selectRotation = selectInteractor.transform.rotation;
-        EndTurn(new SelectExitEventArgs() { interactorObject = interactor });
-
+        var e = new SelectExitEventArgs() { interactorObject = interactor };
+        EndTurn(e);
+        selectExited.Invoke(e);
     }
 
     [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => new Vector3(0, 0, 0);

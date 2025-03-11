@@ -25,8 +25,9 @@ public class XRLever : XRBaseInteractable, ITriggerableEntity
         {
             obj.AddComponent<ActionBasedController>();
         }
-
-        StartGrab(new SelectEnterEventArgs() { interactorObject = interactor });
+        var e = new SelectEnterEventArgs() { interactorObject = interactor };
+        StartGrab(e);
+        selectEntered.Invoke(e);
         OnLeverActivate?.Invoke();
     }
 
@@ -47,8 +48,9 @@ public class XRLever : XRBaseInteractable, ITriggerableEntity
         Vector3 lookDirection = GetLookDirection();
         handle.forward = transform.TransformDirection(lookDirection);
         OnLeverDeactivate?.Invoke();
-        EndGrab(new SelectExitEventArgs() { interactorObject = interactor });
-
+        var e = new SelectExitEventArgs() { interactorObject = interactor };
+        EndGrab(e);
+        selectExited.Invoke(e);
     }
     [Tooltip("The object that's grabbed and manipulated")]
     public Transform handle = null;

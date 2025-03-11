@@ -25,7 +25,9 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
         {
             obj.AddComponent<ActionBasedController>();
         }
-        StartGrab(new SelectEnterEventArgs() { interactorObject = interactor });
+        var e = new SelectEnterEventArgs() { interactorObject = interactor };
+        StartGrab(e);
+        selectEntered.Invoke(e);
     }
 
     public void Triggerred()
@@ -47,7 +49,9 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
         Vector3 newRotation = FindJoystickRotation(targetPosition);
         ApplyRotation(newRotation);
         SetValue(newRotation);
-        EndGrab(new SelectExitEventArgs() { interactorObject = interactor });
+        var e = new SelectExitEventArgs() { interactorObject = interactor };
+        EndGrab(e);
+        selectExited.Invoke(e);
 
     }
 

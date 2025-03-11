@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2025-03-11_22-10-37" tag="">
+  <assembly name="Test">
+    <class name="XRButton" coveredlines="65" coverablelines="87" totallines="185" coveredbranches="0" totalbranches="0" />
+    <class name="XRJoystick" coveredlines="95" coverablelines="121" totallines="208" coveredbranches="0" totalbranches="0" />
+    <class name="XRKnob" coveredlines="56" coverablelines="67" totallines="170" coveredbranches="0" totalbranches="0" />
+    <class name="XRLever" coveredlines="46" coverablelines="69" totallines="159" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

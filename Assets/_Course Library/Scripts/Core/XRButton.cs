@@ -14,12 +14,39 @@ public class XRButton : XRBaseInteractable, ITriggerableEntity
     [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
+
+        buttonTransform = transform;
+        StartPress(new HoverEnterEventArgs() { interactorObject = interactor });
+        float height = FindButtonHeight();
+        ApplyHeight(height);
         OnPress?.Invoke();
     }
 
     [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
+
+        EndPress(new HoverExitEventArgs() { interactorObject = interactor });
         OnRelease?.Invoke();
     }
 

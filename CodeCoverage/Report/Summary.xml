@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>2025/3/11 - 21:28:39</Generatedon>
+    <Parser>MultiReportParser (21x OpenCoverParser)</Parser>
+    <Assemblies>1</Assemblies>
+    <Classes>5</Classes>
+    <Files>5</Files>
+    <Coveredlines>287</Coveredlines>
+    <Uncoveredlines>168</Uncoveredlines>
+    <Coverablelines>455</Coverablelines>
+    <Totallines>786</Totallines>
+    <Linecoverage>63</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>76</Coveredmethods>
+    <Totalmethods>101</Totalmethods>
+    <Methodcoverage>75.2</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="Test" classes="5" coverage="63" coveredlines="287" coverablelines="455" totallines="786" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="76" totalmethods="101" methodcoverage="75.2">
+      <Class name="XRButton" coverage="89" coveredlines="122" coverablelines="137" totallines="185" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="30" totalmethods="31" methodcoverage="96.7" />
+      <Class name="XRJoystick" coverage="61.9" coveredlines="75" coverablelines="121" totallines="211" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="24" totalmethods="29" methodcoverage="82.7" />
+      <Class name="XRKnob" coverage="76.1" coveredlines="51" coverablelines="67" totallines="147" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="13" totalmethods="15" methodcoverage="86.6" />
+      <Class name="XRLever" coverage="56.5" coveredlines="39" coverablelines="69" totallines="136" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="14" methodcoverage="64.2" />
+      <Class name="XRSlider" coverage="0" coveredlines="0" coverablelines="61" totallines="107" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>

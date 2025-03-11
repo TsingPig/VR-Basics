@@ -8,23 +8,36 @@ using VRExplorer;
 /// <summary>
 /// An interactable knob that follows the rotation of the interactor
 /// </summary>
-public class XRKnob : XRBaseInteractable, ITriggerableEntity
+public class XRKnob : XRBaseInteractable, ITransformableEntity
 {
 
 
     [ExcludeFromCodeCoverage] public float TriggeringTime => 2.5f;
-    [ExcludeFromCodeCoverage] public string Name => Str.Triggerable;
+    [ExcludeFromCodeCoverage] public string Name => Str.Transformable;
 
     [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
+        //StartTurn(new SelectEnterEventArgs() { interactorObject = new XRDirectInteractor() });
     }
 
     [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
+        //EndTurn(new SelectExitEventArgs() { interactorObject = new XRDirectInteractor() });
+        //OnValueChange.Invoke(DeltaRotation.y);
+        //Angle = FindRotationValue();
+        //float finalRotation = ApplyRotation(Angle);
+
+        //SetValue(finalRotation);
+        //selectRotation = selectInteractor.transform.rotation;
     }
 
+    [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => new Vector3(0, 0, 0);
+
+    [ExcludeFromCodeCoverage] public Vector3 DeltaRotation => new Vector3(0, 180, 0);
+
+    [ExcludeFromCodeCoverage] public Vector3 DeltaScale => new Vector3(0, 0, 0);
 
     [Tooltip("The transform of the visual component of the knob")]
     public Transform knobTransform = null;

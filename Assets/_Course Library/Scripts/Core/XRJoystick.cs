@@ -16,16 +16,47 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
     [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
+
+
+        StartGrab(new SelectEnterEventArgs() { interactorObject = interactor });
     }
 
     [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
+        var obj = EntityManager.Instance.vrexplorerMono.gameObject;
+        XRDirectInteractor interactor;
+        if(!obj.TryGetComponent(out interactor))
+        {
+            interactor = obj.AddComponent<XRDirectInteractor>();
+        }
+        if(!obj.GetComponent<ActionBasedController>())
+        {
+            obj.AddComponent<ActionBasedController>();
+        }
+
+        EndGrab(new SelectExitEventArgs() { interactorObject = interactor });
+        OnXValueChange.Invoke(DeltaRotation.x);
+        OnYValueChange.Invoke(DeltaRotation.y);
+        Vector3 targetPosition = selectInteractor.transform.position;
+        Vector3 newRotation = FindJoystickRotation(targetPosition);
+        ApplyRotation(newRotation);
+        SetValue(newRotation);
     }
 
     [ExcludeFromCodeCoverage] public Vector3 DeltaPosition => new Vector3(0, 0, 0);
 
-    [ExcludeFromCodeCoverage] public Vector3 DeltaRotation => new Vector3(90, 0, 0);
+    [ExcludeFromCodeCoverage] public Vector3 DeltaRotation => new Vector3(90, 30, 0);
 
     [ExcludeFromCodeCoverage] public Vector3 DeltaScale => new Vector3(0, 0, 0);
 

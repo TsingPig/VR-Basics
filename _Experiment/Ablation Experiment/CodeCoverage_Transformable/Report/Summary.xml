@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>2025/3/22 - 14:59:52</Generatedon>
+    <Parser>MultiReportParser (4x OpenCoverParser)</Parser>
+    <Assemblies>1</Assemblies>
+    <Classes>4</Classes>
+    <Files>4</Files>
+    <Coveredlines>186</Coveredlines>
+    <Uncoveredlines>128</Uncoveredlines>
+    <Coverablelines>314</Coverablelines>
+    <Totallines>628</Totallines>
+    <Linecoverage>59.2</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>42</Coveredmethods>
+    <Totalmethods>60</Totalmethods>
+    <Methodcoverage>70</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="Test" classes="4" coverage="59.2" coveredlines="186" coverablelines="314" totallines="628" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="42" totalmethods="60" methodcoverage="70">
+      <Class name="XRButton" coverage="74.7" coveredlines="65" coverablelines="87" totallines="186" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="13" totalmethods="15" methodcoverage="86.6" />
+      <Class name="XRJoystick" coverage="20.8" coveredlines="19" coverablelines="91" totallines="161" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="16" methodcoverage="31.2" />
+      <Class name="XRKnob" coverage="64.1" coveredlines="43" coverablelines="67" totallines="120" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="11" totalmethods="15" methodcoverage="73.3" />
+      <Class name="XRLever" coverage="85.5" coveredlines="59" coverablelines="69" totallines="161" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="13" totalmethods="14" methodcoverage="92.8" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>

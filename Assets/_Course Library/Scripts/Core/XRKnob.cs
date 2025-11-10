@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
-using VRExplorer;
+using HenryLab;
 
 /// <summary>
 /// An interactable knob that follows the rotation of the interactor

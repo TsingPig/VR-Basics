@@ -3,7 +3,8 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
-using VRExplorer;
+using HenryLab;
+
 
 /// <summary>
 /// An interactable joystick that can move side to side, and forward and back by a direct interactor

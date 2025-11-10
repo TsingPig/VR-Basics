@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
-using VRExplorer;
+using HenryLab;
+
 /// <summary>
 /// An interactable that can be pressed by a direct interactor
 /// </summary>

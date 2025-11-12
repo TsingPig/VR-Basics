@@ -32,6 +32,7 @@
     "com.unity.postprocessing": "3.4.0",
     "com.unity.render-pipelines.universal": "12.1.15",
     "com.unity.test-framework": "2.0.1-pre.18",
+    "com.unity.testtools.codecoverage": "1.2.7",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.5",
     "com.unity.transport": "1.5.0",

@@ -14,6 +14,7 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
     [ExcludeFromCodeCoverage] public float TriggeringTime => 4.5f;
     [ExcludeFromCodeCoverage] public string Name => Str.Transformable;
 
+    [ExcludeFromCodeCoverage]
     public void Triggerring()
     {
         var obj = EntityManager.Instance.vrexplorerMono.gameObject;
@@ -31,6 +32,7 @@ public class XRJoystick : XRBaseInteractable, ITransformableEntity
         selectEntered.Invoke(e);
     }
 
+    [ExcludeFromCodeCoverage]
     public void Triggerred()
     {
         var obj = EntityManager.Instance.vrexplorerMono.gameObject;

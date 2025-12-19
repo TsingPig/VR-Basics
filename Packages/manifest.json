@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.henrylab.vragent": "https://github.com/TsingPig/VRAgent_Release.git",
     "com.henrylab.vrexplorer": "https://github.com/TsingPig/VRExplorer_Release.git",
     "com.microsoft.azure.object-anchors.runtime": "file:MixedReality/com.microsoft.azure.object-anchors.runtime-0.25.0.tgz",
     "com.microsoft.azure.remote-rendering": "file:MixedReality/com.microsoft.azure.remote-rendering-1.1.34.tgz",

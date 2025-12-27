@@ -19,10 +19,11 @@ GameObject:
   - component: {fileID: 2085702217920827848}
   - component: {fileID: 74831552}
   - component: {fileID: 1248989243}
-  - component: {fileID: 8638888013503933268}
   - component: {fileID: 6495558850956895644}
   - component: {fileID: -1904640691443413184}
   - component: {fileID: 8465374273540956745}
+  - component: {fileID: -1814513601529827304}
+  - component: {fileID: -6200075454729383155}
   m_Layer: 0
   m_Name: Box
   m_TagString: Box
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6150933721197494150}
-  m_LocalRotation: {x: 0, y: 0.25881907, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: -2.5, y: 1.1999999, z: 6.2}
+  m_LocalRotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+  m_LocalPosition: {x: -2.5, y: 1.4499999, z: 6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -441,25 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866d134ae31a01841b6156f8d0a87054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8638888013503933268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6150933721197494150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b05e8f39c90dc4fad20aaf0100ad81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerringEvents: []
-  triggerredEvents: []
-  triggeringTime: 0.5
-  triggerringTime: 0.2
-  deltaRotation: {x: 0, y: 15, z: 0}
-  deltaScale: {x: 0, y: 0, z: 0}
-  deltaPosition: {x: 0, y: 0.25, z: 0}
 --- !u!114 &6495558850956895644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,6 +491,54 @@ MonoBehaviour:
   deltaScale: {x: 0, y: 0, z: 0}
   deltaPosition: {x: 0, y: 0.25, z: 0}
 --- !u!114 &8465374273540956745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150933721197494150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea063aa6194c2234cac095d8da6e035e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerringEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayQuickSound, Test
+        m_MethodName: Play
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerredEvents: []
+  triggeringTime: 0.05
+--- !u!114 &-1814513601529827304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150933721197494150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b05e8f39c90dc4fad20aaf0100ad81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerringEvents: []
+  triggerredEvents: []
+  triggeringTime: 0.5
+  triggerringTime: 0.2
+  deltaRotation: {x: 0, y: 15, z: 0}
+  deltaScale: {x: 0, y: 0, z: 0}
+  deltaPosition: {x: 0, y: 0.25, z: 0}
+--- !u!114 &-6200075454729383155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
